@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+{% load cust_filters %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -22,10 +23,10 @@
         </thead>
         {% for movie in movies_list %}
         <tr>
-            <td>{{movie.rdate}}</td>
-            <td>{{movie.moviename}}</td>
-            <td>{{movie.hero}}</td>
-            <td>{{movie.heroine}}</td>
+            <td>{{movie.rdate | Datef}}</td>
+            <td>{{movie.moviename | fupper}}</td>
+            <td>{{movie.hero | fupper}}</td>
+            <td>{{movie.heroine | fupper}}</td>
             <td>{{movie.rating}}</td>
         </tr>
         {% endfor %}
